@@ -44,4 +44,6 @@
     <string name="desc_gedung_teknik">Gambar Gedung Fakultas Teknik Unsoed</string>
     <string name="desc_logo_unsoed">Logo Universitas Jenderal Soedirman</string>
     <string name="back">back</string>
+    <string name="koleksi_buku">Koleksi Buku</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

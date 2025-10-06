@@ -8,41 +8,47 @@ import com.unsoed.ifunsoedmobile.databinding.ActivityHalaman2Binding
 
 class Halaman2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityHalaman2Binding
-
-    private val latitude = "-7.439427"
+    private val latitude = "-7.429427"
     private val longitude = "109.338082"
     private val gMapsUrl = "http://maps.google.com/maps?q=loc:"
     private val packageMaps = "com.google.android.apps.maps"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityHalaman2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initLayout()
         initListener()
     }
-
-    private fun initLayout() {
+    private fun initLayout(){
         binding.layoutLocation.let {
             it.imgIcon.setImageResource(R.drawable.ic_location)
             it.tvLayout.setText(R.string.alamat)
         }
+
         binding.layoutEmail.let {
             it.imgIcon.setImageResource(R.drawable.ic_email)
             it.tvLayout.setText(R.string.email)
         }
+
         binding.layoutIg.let {
             it.imgIcon.setImageResource(R.drawable.ic_himpunan)
-            it.tvLayout.setText(R.string.ig_himpunan)
+            it.tvLayout.setText(R.string.himpunan)
         }
+
         binding.layoutPhone.let {
             it.imgIcon.setImageResource(R.drawable.ic_phone)
             it.tvLayout.setText(R.string.telepon)
         }
+        binding.layoutBuku.let{
+            it.imgIcon.setImageResource(R.drawable.ic_book)
+            it.tvLayout.setText(R.string.koleksi_buku)
+        }
+
     }
 
-    private fun initListener() {
+    private fun initListener(){
         binding.layoutLocation.root.setOnClickListener {
             val gMapsIntentUri = "$gMapsUrl$latitude,$longitude".toUri()
             val mapIntent = Intent(Intent.ACTION_VIEW, gMapsIntentUri)
@@ -50,25 +56,25 @@ class Halaman2Activity : AppCompatActivity() {
         }
 
         binding.layoutIg.root.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = getString(R.string.ig_himpunan).toUri()
-            startActivity(intent)
+            val Intent = Intent(Intent.ACTION_VIEW)
+            Intent.data = getString(R.string.ig_himpunan).toUri()
+            startActivity(Intent)
         }
-
         binding.layoutEmail.root.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SENDTO).apply {
+            val Intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = "mailto:${getString(R.string.email)}".toUri()
             }
-            startActivity(intent)
+            startActivity(Intent)
         }
-
         binding.layoutPhone.root.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL).apply {
+            val Intent = Intent(Intent.ACTION_DIAL).apply {
                 data = "tel:${getString(R.string.telepon)}".toUri()
             }
-            startActivity(intent)
+            startActivity(Intent)
         }
-
+        binding.layoutBuku.root.setOnClickListener {
+            startActivity(Intent(this, DaftarBukuActivity::class.java))
+        }
         binding.btnBack.setOnClickListener {
             finish()
         }

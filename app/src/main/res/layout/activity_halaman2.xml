@@ -88,19 +88,26 @@
                     android:layout_marginTop="4dp"/>
                 <include
                     android:id="@+id/layout_email"
-                    layout="@layout/layout_menu2"
+                    layout="@layout/layout_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"/>
                 <include
                     android:id="@+id/layout_location"
-                    layout="@layout/layout_menu3"
+                    layout="@layout/layout_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"/>
                 <include
                     android:id="@+id/layout_ig"
-                    layout="@layout/layout_menu4"
+                    layout="@layout/layout_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"/>
+                <include
+                    android:id="@+id/layout_buku"
+                    layout="@layout/layout_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
